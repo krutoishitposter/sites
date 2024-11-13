@@ -33,22 +33,38 @@ body {
     margin-bottom: 30px;
 }
 
-/* Стиль кнопки */
+/* Стиль иконки Telegram */
+.telegram-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+/* Кнопка с RGB эффектом */
 .download-btn {
-    background-color: #0088cc;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff);
+    background-size: 300% 300%;
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 15px 30px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.5s ease;
+    animation: rgb-shift 3s infinite linear;
 }
 
 .download-btn:hover {
-    background-color: #006f8e;
+    filter: brightness(1.2);
 }
 
 .download-btn:active {
-    background-color: #005b74;
+    filter: brightness(0.9);
+}
+
+/* Анимация RGB перелива */
+@keyframes rgb-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
